@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lupina</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" href="logos/logopestaña.png">
+	<link rel="stylesheet" type="text/css" href="diseño.css">
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Comic+Neue:wght@700&family=Questrial&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/973a6e704f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<header class="header">
+		<div class="header-content"> 
+			<img src="logos/logo.jpg">
+			<div class="carrito"><i class="fa-solid fa-heart carrito-heart"></i><i class="fa-solid fa-cart-shopping carrito-icon"></i></div>
+		</div>
+		<div class="purchases">
+			<div class="purchases-container">
+				<div class="carrito-title column"><p>Carrito de compras</p></div>
+				<p>Producto</p> <p class="justifySR">Cantidad</p> <p class="justifySR">Subtotal</p>
+
+				<div class="purchases-list column">
+					
+				</div>
+
+				<p>Subtotal:</p> <p class="justifySR" id="subtotal-quantity">0</p> <p class="justifySR" id="subtotal-price">$0</p>
+
+				<div class="delivery-selection column">
+					<p>Metodo de envío:</p>
+					<div class="mth">
+						<input type="radio" name="delivery" value="Envío"><label for="Envío">Envío</label>
+						<input type="radio" name="delivery" value="Retiro"><label for="Retiro">Retiro</label>
+					</div>
+				</div>
+
+				<input class="buy column" type="button" value="Iniciar Compra">
+			</div>
+		</div>
+	</header>
+	<content class="content ">
+		<div class="shadow"></div>
+
+		<!-- IMAGENES DESLIZANTES -->
+		
+		<div class="slide">
+			<div class="rotador">
+				<div class="arrow-container left-container"><p class="left flecha"><</p></div>
+				<div class="arrow-container right-container"><p class="right flecha">></p></div>
+				<form class="radio">
+				</form>
+			</div>
+			<ul class="slide-ul">
+				<li><img src="slide/Kit Lupina.png"></li>
+				<li><img src="slide/Acondicionador sólido natural.png"></li>
+				<li><img src="slide/Shampoo sólido natural Control Caída.png"></li>
+				<li><img src="slide/Shampoo sólido natural para Cabello Graso.png"></li>
+				<li><img src="slide/Shampoo sólido natural para Cabello Normal.png"></li>
+				<li><img src="slide/Shampoo sólido natural para Cabello Seco.png"></li>
+			</ul>
+		</div>
+
+		<!-- IMAGEN DE PRODUCCION -->
+		
+		<div class="production">
+			<div class="production-header"><p>Producción</p></div>
+			<img class="caracteristicas" src="imagenes/caracteristicas imas/caracteristicas.png">
+		</div>
+		
+		<!-- PESTAÑA DE PRODUCTOS -->
+		<div class="products-title title"><p>Nuestros Productos</p><p class="open" id="open-products">></p></div>
+
+		<div class="products">
+
+			<div class="kits-title title"><p>Kits</p><p class="open" id="open-kits">></p></div>
+
+			<div class="kits table">
+
+				<div class="card">
+
+					<div class="img-cont"><img src="slide/Kit Lupina.png"></div>
+
+					<div class="text-content">
+						<p class="name">Kit Lupina</p>
+						<b><p class="price" id="kit-price">$1500</p></b>
+						<p class="description">Kit que incluye jabonera, acondicionador y shampoo a elección</p>
+						<div class="buy-input">
+							<input class="quantity" type="number" name="kitQuantity" value="1" min="1" id="kit-quantity">
+							<input class="kit-button buy-button" type="button" name="kitQuantity" value="Comprar">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="shampoo-title title"><p>Shampoos</p><p class="open" id="open-shampoo">></p></div>
+
+			<div class="shampoo table">
+
+				<div class="card">
+
+					<div class="img-cont"><img src="slide/Acondicionador sólido natural.png"></div>
+
+					<div class="text-content">
+						<p class="name">Acondicionador</p>
+						<b><p class="price" id="aco-price">$1000</p></b>
+						<p class="description">Kit que incluye jabonera, acondicionador y shampoo a elección</p>
+						<div class="buy-input">
+							<input class="quantity" type="number" name="kitQuantity" value="1" min="1" id="aco-quantity">
+							<input class="acondicionador-button buy-button" type="button" value="Comprar">
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+
+					<div class="img-cont"><img src="slide/Shampoo sólido natural Control Caída.png"></div>
+
+					<div class="text-content">
+						<p class="name">Control Caída</p>
+						<b><p class="price" id="caida-price">$1200</p></b>
+						<p class="description">Kit que incluye jabonera, acondicionador y shampoo a elección</p>
+						<div class="buy-input">
+							<input class="quantity" type="number" name="kitQuantity" value="1" min="1" id="caida-quantity">
+							<input class="caida-button buy-button" type="button" value="Comprar">
+						</div>
+					</div>
+
+				</div>
+
+				<div class="card">
+
+					<div class="img-cont"><img src="slide/Shampoo sólido natural para Cabello Graso.png"></div>
+
+					<div class="text-content">
+						<p class="name">Cabello Graso</p>
+						<b><p class="price" id="graso-price">$1150</p></b>
+						<p class="description">Kit que incluye jabonera, acondicionador y shampoo a elección</p>
+						<div class="buy-input">
+							<input class="quantity" type="number" name="kitQuantity" value="1" min="1" id="graso-quantity">
+							<input class="graso-button buy-button" type="button" value="Comprar">
+						</div>
+					</div>
+
+				</div>
+
+				<div class="card">
+
+					<div class="img-cont"><img src="slide/Shampoo sólido natural para Cabello Normal.png"></div>
+
+					<div class="text-content">
+						<p class="name">Cabello Normal</p>
+						<b><p class="price" id="normal-price">$900</p></b>
+						<p class="description">Kit que incluye jabonera, acondicionador y shampoo a elección</p>
+						<div class="buy-input">
+							<input class="quantity" type="number" name="kitQuantity" value="1" min="1" id="normal-quantity">
+							<input class="normal-button buy-button" type="button" value="Comprar">
+						</div>
+					</div>
+
+				</div>
+
+				<div class="card">
+
+					<div class="img-cont"><img src="slide/Shampoo sólido natural para Cabello Seco.png"></div>
+
+					<div class="text-content">
+						<p class="name">Cabello Seco</p>
+						<b><p class="price" id="seco-price">$1250</p></b>
+						<p class="description">Kit que incluye jabonera, acondicionador y shampoo a elección</p>
+						<div class="buy-input">
+							<input class="quantity" type="number" name="kitQuantity" value="1" min="1" id="seco-quantity">
+							<input class="seco-button buy-button" type="button" value="Comprar">
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- ENVIO -->
+		
+		<div class="delivery">
+			<div class="delivery-header"><p>Formas de entrega</p></div>
+			<div class="first-method delivery-method">
+				<img src="imagenes/envio/envio.png">
+				<p class="delivery-title">Envío</p>
+				<p class="delivery-text">Envios a todo el País por Correo Argentino (a cargo del comprador)</p>
+			</div> 
+			<div class="second-method delivery-method">
+				<img src="imagenes/envio/retiro.png">
+				<p class="delivery-title">Puntos de Retiro</p>
+				<ul class="delivery-text">
+					<li>Villa del Parque</li>
+					<li>Palomar</li>
+				</ul>
+			</div>
+		</div>
+		
+		<!-- PESTAÑA DE INFORMACION -->
+
+		<div class="info-title title"><p>Sobre Nosotros</p><p class="open-info open">></p></div>
+		<div class="info">
+			<div class="info-img-container"><img src="nosotros/nosotros.png" alt="ERROR"></div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+
+		<!-- METODOS DE PAGO -->
+
+		<div class="payment">
+			<div class="payment-header"><p>Metodos de Pago</p></div>
+			<div class="payment-method cash">
+				<img src="imagenes/pago/efectivo.png">
+				<p class="payment-title">Efectivo</p>
+			</div> 
+			<div class="payment-method MP">
+				<img src="imagenes/pago/mercadopago.png">
+				<p class="payment-title">Mercado Pago</p>
+			</div>
+			<div class="payment-method transfer">
+				<img src="imagenes/pago/tarjeta.png">
+				<p class="payment-title">Transferencia Bancaria</p>
+			</div> 
+		</div>
+
+	</content>
+	<footer class="footer"></footer>
+	<script src="java.js"></script>
+</body>
+</html>
