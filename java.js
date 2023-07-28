@@ -15,6 +15,8 @@ const kitsTitle = document.querySelector(".kits-title");
 const kitsContainer = document.querySelector(".kits");
 const shampooTitle = document.querySelector(".shampoo-title");
 const shampooContainer = document.querySelector(".shampoo");
+const aboutUsTitle = document.querySelector(".info-title");
+const aboutUsContainer = document.querySelector(".info");
 let productsTimer,kitsHeightTimer,shampooHeightTimer;
 
 let containerInfo = {
@@ -32,6 +34,10 @@ let containerInfo = {
 		state: "closed" ,
 		length: shampooContainer.children.length,
 		arrow: document.getElementById("open-shampoo")
+	},
+	aboutUs: {
+		state: "closed",
+		arrow: document.getElementById("open-info")
 	}
 };
 
@@ -49,10 +55,12 @@ productsTitle.addEventListener("click",()=>{
 		containerInfo.products.state = "closed";
 		containerInfo.products.arrow.style.transform = "rotate(0deg)";
 		
+		kitsContainer.style.padding = `0px`;
 		kitsContainer.style.maxHeight = `0px`;
 		containerInfo.kits.state = "closed";
 		containerInfo.kits.arrow.style.transform = "rotate(0deg)";
 
+		shampooContainer.style.padding = `0px`;
 		shampooContainer.style.maxHeight = `0px`;
 		containerInfo.shampoo.state = "closed";
 		containerInfo.shampoo.arrow.style.transform = "rotate(0deg)";
@@ -70,6 +78,7 @@ kitsTitle.addEventListener("click",()=>{
 	clearTimeout(kitsHeightTimer);
 	if (containerInfo.kits.state=="closed") {
 		kitsContainer.style.height = "auto";
+		kitsContainer.style.padding = `10px 0px`;
 		kitsContainer.style.maxHeight = `${rowHeight(containerInfo.kits.length)}px`;
 		containerInfo.kits.arrow.style.transform = "rotate(90deg)";
 
@@ -83,6 +92,7 @@ kitsTitle.addEventListener("click",()=>{
 	}
 	else{
 		kitsContainer.style.maxHeight = `0px`;
+		kitsContainer.style.padding = `0px 0px`;
 		containerInfo.kits.arrow.style.transform = "rotate(0deg)";
 
 		if (containerInfo.shampoo.state=="opened") {
@@ -103,6 +113,7 @@ shampooTitle.addEventListener("click",()=>{
 	clearTimeout(shampooHeightTimer);
 	if (containerInfo.shampoo.state=="closed") {
 		shampooContainer.style.height = "auto";
+		shampooContainer.style.padding = `10px 0px`;
 		shampooContainer.style.maxHeight = `${rowHeight(containerInfo.shampoo.length)}px`;
 		containerInfo.shampoo.arrow.style.transform = "rotate(90deg)";
 
@@ -116,6 +127,7 @@ shampooTitle.addEventListener("click",()=>{
 	}
 	else{
 		shampooContainer.style.maxHeight = `0px`;
+		shampooContainer.style.padding = `0px 0px`;
 		containerInfo.shampoo.arrow.style.transform = "rotate(0deg)";
 
 		if (containerInfo.kits.state=="opened") {
@@ -149,16 +161,31 @@ window.addEventListener("resize",()=>{
 	}
 })
 
+aboutUsTitle.addEventListener("click",(e)=>{
+	if (containerInfo.aboutUs.state=="closed") {
+		aboutUsContainer.style.maxHeight = `110%`;
+		aboutUsContainer.style.padding = "10px 0px";
+		containerInfo.aboutUs.state="opened";
+		containerInfo.aboutUs.arrow.style.transform = "rotate(90deg)";
+	}
+	else if (containerInfo.aboutUs.state="opened") {
+		aboutUsContainer.style.maxHeight = `0`;
+		aboutUsContainer.style.padding = "0px 0px";
+		containerInfo.aboutUs.state="closed";
+		containerInfo.aboutUs.arrow.style.transform = "rotate(0deg)";
+	}
+})
+
 function rowHeight(containerLength){
 	if (window.innerWidth<540) {
-		return containerLength*400;
+		return containerLength*460;
 	}
 	else if(containerLength<=Math.floor(window.innerWidth/270)){
-		return 400;
+		return 460;
 	}
 	else{
 		// Revisar
-		return Math.ceil(containerLength/Math.floor(window.innerWidth/270))*400;
+		return Math.ceil(containerLength/Math.floor(window.innerWidth/270))*460;
 	}
 }
 

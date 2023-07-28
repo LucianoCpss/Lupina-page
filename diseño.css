@@ -473,7 +473,7 @@ body::-webkit-scrollbar-thumb{
 	box-shadow: inset 0px 0px 3px 0 #000;
 }
 
-.kits, .shampoo{
+.table{
 	display: flex;
 	flex-wrap: wrap;
 	height: 0px;
@@ -483,8 +483,8 @@ body::-webkit-scrollbar-thumb{
 	overflow: hidden;
 	background-color: #ded4ea;
 	box-shadow: inset 0px 0px 3px 0 #000;
-	padding: 0/*20px*/;
-	transition: max-height 1s;
+	padding: 0px 0px;
+	transition: max-height 1s, padding 1s;
 }
 
 .card{
@@ -497,7 +497,7 @@ body::-webkit-scrollbar-thumb{
 	width: 250px;
 	background: #fff;
 	box-shadow: 1px 1px 2px 0 #0008;
-	transition: transform .3s, box-shadow .3s, background-color .3s, height .3s;
+	transition: margin .3s, transform .3s, box-shadow .3s, background-color .3s, height .3s;
 }
 
 .text-content{
@@ -560,6 +560,7 @@ body::-webkit-scrollbar-thumb{
 	box-shadow: 3px 3px 5px 0 #0008;
 	background-color: #eee;
 	height: 380px;
+	margin: 20px 10px;
 }
 
 .buy-button:hover{
@@ -668,9 +669,11 @@ body::-webkit-scrollbar-thumb{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	height: 100%;
 	overflow: hidden;
-	transition: height 1s;
+	height: auto;
+	max-height: 0;
+	padding: 0px 0px;
+	transition: max-height 1s, padding 1s;
 	background-color: #ded4ea;
 	box-shadow: inset 0px 0px 5px 0 #000;
 }
@@ -678,16 +681,17 @@ body::-webkit-scrollbar-thumb{
 .info-img-container{
 	display: flex;
 	justify-content: center;
+	margin-bottom: 10px;
 }
 
 .info-img-container img{
 	object-fit: contain;
 }
 
-.info p{
+.info-description{
+	display: inline-block;
 	padding: 10px;
 	margin: 0px 15px;
-	align-self: center;
 	background-color: #fff;
 	border: 1px solid #000;
 }
